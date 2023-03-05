@@ -71,8 +71,9 @@ int main()
             CandidatoVencedor = Candidatos[i];
         }
     }
-    if(CandidatoVencedor == "Nulo")
-        cout << "ELEICOES CANCELADAS!";
+   
+    if(CandidatoVencedor == "[Nulo]")
+        cout << "ELEICOES CANCELADAS!" << endl;
     else
         cout << "O candidato vencedor foi: " << CandidatoVencedor << " com " << TotalDeVotosCandidatoVencedor << " votos " << endl;
     
