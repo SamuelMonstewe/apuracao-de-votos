@@ -27,15 +27,25 @@ int main()
         for(int i = 0; i < 7; i++)
            cout <<  i << " - " << Candidatos[i] << endl;
         
-        
         while(ConclusaoDeVoto == 'N')
         {
             cout << "Codigo de candidato para o voto: " << endl;
             cin  >> CodigoDeVotoDoCandidato;
-            cout << "Candidato selecionado: " << Candidatos[CodigoDeVotoDoCandidato] << endl;
-            cout << "Concluir voto? <S/N>";
-            cin >> ConclusaoDeVoto;
-            TotalDeVotosCadaCandidato[CodigoDeVotoDoCandidato]++;
+            if(CodigoDeVotoDoCandidato == 0)
+            {
+                cout << "VOCE TEM CERTEZA? <S/N>";
+                cin >> ConclusaoDeVoto;
+                if(ConclusaoDeVoto == 'S')
+                    TotalDeVotosCadaCandidato[CodigoDeVotoDoCandidato]++;
+            }
+            else
+            {
+                cout << "Candidato selecionado: " << Candidatos[CodigoDeVotoDoCandidato] << endl;
+                cout << "Concluir voto? <S/N>";
+                cin >> ConclusaoDeVoto;
+                TotalDeVotosCadaCandidato[CodigoDeVotoDoCandidato]++;
+            }
+            
         }
         
         cout << "Estado atual das eleicoes: ";
@@ -46,11 +56,10 @@ int main()
         cout << "Obrigado por votar!" << endl << "--------------------" << endl;
         cout << "Comecar a votar? <S/N>";
         cin >> VerificacaoParaVoto;
-
     }
 
     cout << "Chegamos ao fim das eleicoes! Os resultados foram o seguinte: " << endl;
-
+    
     for(int i = 0; i < 7; i++)
     {
         cout << "O candidato " << Candidatos[i] << " teve " <<  TotalDeVotosCadaCandidato[i] << " votos " << endl;
@@ -60,7 +69,11 @@ int main()
             CandidatoVencedor = Candidatos[i];
         }
     }
-
-    cout << "O candidato vencedor foi: " << CandidatoVencedor << " com " << TotalDeVotosCandidatoVencedor << " votos ";
+    if(CandidatoVencedor == "Nulo")
+        cout << "ELEICOES CANCELADAS!";
+    else
+        cout << "O candidato vencedor foi: " << CandidatoVencedor << " com " << TotalDeVotosCandidatoVencedor << " votos ";
+    
+    
 
 }
