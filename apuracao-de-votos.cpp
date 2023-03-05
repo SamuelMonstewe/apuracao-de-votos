@@ -8,11 +8,12 @@ using namespace std;
 
 int main()
 {  
-    string Candidatos[] = {"Nulo", "Bolsonaro", "Lula", "Ciro", "Padre Kelmo", "Simone Tebet", "Pablo Marcal"};
+    string Candidatos[] = {"[Nulo]", "[Bolsonaro]", "[Lula]", "[Ciro]", "[Padre Kelmo]", "[Simone Tebet]", "[Pablo Marcal]"};
     string CandidatoVencedor;
     int TotalDeVotosCandidatoVencedor = 0;
     int TotalDeVotosCadaCandidato[7] = {0};
     uint16_t CodigoDeVotoDoCandidato;
+    uint16_t TotalDeEleitores = 0;
     char ConclusaoDeVoto = 'N';
     char VerificacaoParaVoto = 'S';
 
@@ -56,6 +57,8 @@ int main()
         cout << "Obrigado por votar!" << endl << "--------------------" << endl;
         cout << "Comecar a votar? <S/N>";
         cin >> VerificacaoParaVoto;
+
+        TotalDeEleitores++;
     }
 
     cout << "Chegamos ao fim das eleicoes! Os resultados foram o seguinte: " << endl;
@@ -72,8 +75,7 @@ int main()
     if(CandidatoVencedor == "Nulo")
         cout << "ELEICOES CANCELADAS!";
     else
-        cout << "O candidato vencedor foi: " << CandidatoVencedor << " com " << TotalDeVotosCandidatoVencedor << " votos ";
+        cout << "O candidato vencedor foi: " << CandidatoVencedor << " com " << TotalDeVotosCandidatoVencedor << " votos " << endl;
     
-    
-
+    cout << "O total de eleitores participantes foi de: " << TotalDeEleitores;
 }
