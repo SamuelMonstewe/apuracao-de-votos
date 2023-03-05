@@ -49,7 +49,18 @@ int main()
 
     }
 
-    
-        
+    cout << "Chegamos ao fim das eleicoes! Os resultados foram o seguinte: " << endl;
+
+    for(int i = 0; i < 7; i++)
+    {
+        cout << "O candidato " << Candidatos[i] << " teve " <<  TotalDeVotosCadaCandidato[i] << " votos " << endl;
+        if(TotalDeVotosCadaCandidato[i] > TotalDeVotosCandidatoVencedor)
+        {
+            TotalDeVotosCandidatoVencedor = TotalDeVotosCadaCandidato[i];
+            CandidatoVencedor = Candidatos[i];
+        }
+    }
+
+    cout << "O candidato vencedor foi: " << CandidatoVencedor << " com " << TotalDeVotosCandidatoVencedor << " votos ";
 
 }
