@@ -12,7 +12,7 @@ int main()
     string CandidatoVencedor;
     int TotalDeVotosCandidatoVencedor = 0;
     int TotalDeVotosCadaCandidato[7] = {0};
-    uint16_t CodigoCandidato;
+    uint16_t CodigoDeVotoDoCandidato;
     char ConclusaoDeVoto = 'N';
     char VerificacaoParaVoto = 'S';
 
@@ -31,11 +31,11 @@ int main()
         while(ConclusaoDeVoto == 'N')
         {
             cout << "Codigo de candidato para o voto: " << endl;
-            cin  >> CodigoCandidato;
-            cout << "Candidato selecionado: " << Candidatos[CodigoCandidato] << endl;
+            cin  >> CodigoDeVotoDoCandidato;
+            cout << "Candidato selecionado: " << Candidatos[CodigoDeVotoDoCandidato] << endl;
             cout << "Concluir voto? <S/N>";
             cin >> ConclusaoDeVoto;
-            TotalDeVotosCadaCandidato[CodigoCandidato]++;
+            TotalDeVotosCadaCandidato[CodigoDeVotoDoCandidato]++;
         }
         
         cout << "Estado atual das eleicoes: ";
