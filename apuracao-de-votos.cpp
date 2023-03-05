@@ -77,5 +77,8 @@ int main()
     else
         cout << "O candidato vencedor foi: " << CandidatoVencedor << " com " << TotalDeVotosCandidatoVencedor << " votos " << endl;
     
-    cout << "O total de eleitores participantes foi de: " << TotalDeEleitores;
+    cout << "O total de eleitores participantes foi de: " << TotalDeEleitores << endl;
+
+    system("pause");
 }
+
