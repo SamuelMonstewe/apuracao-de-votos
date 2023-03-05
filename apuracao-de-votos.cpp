@@ -10,8 +10,8 @@ int main()
 {  
     string Candidatos[] = {"[Nulo]", "[Bolsonaro]", "[Lula]", "[Ciro]", "[Padre Kelmo]", "[Simone Tebet]", "[Pablo Marcal]"};
     string CandidatoVencedor;
-    int TotalDeVotosCandidatoVencedor = 0;
-    int TotalDeVotosCadaCandidato[7] = {0};
+    unsigned int TotalDeVotosCandidatoVencedor = 0;
+    unsigned int TotalDeVotosCadaCandidato[7] = {0};
     uint16_t CodigoDeVotoDoCandidato;
     uint16_t TotalDeEleitores = 0;
     char ConclusaoDeVoto = 'N';
@@ -22,7 +22,6 @@ int main()
         if(ConclusaoDeVoto == 'S')
             ConclusaoDeVoto = 'N';
         
-
         cout << "Candidatos disponiveis para voto com seus respectivos codigos: " << endl;
 
         for(int i = 0; i < 7; i++)
@@ -81,4 +80,8 @@ int main()
 
     system("pause");
 }
+
+
+
+
 
