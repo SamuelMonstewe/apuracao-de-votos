@@ -12,9 +12,9 @@ int main()
     int TotalDeVotosCadaCandidato[7] = {0};
     int CodigoCandidato;
     char ConclusaoDeVoto = 'N';
-    int flag = 1;
+    char VerificacaoParaVoto = 'S';
 
-    while (flag == 1)
+    while (VerificacaoParaVoto == 'S')
     {
         cout << "Candidatos disponiveis para voto com seus respectivos codigos: " << endl;
 
@@ -38,9 +38,9 @@ int main()
         for(int i = 0; i < 7; i++)
              cout << Candidatos[i] << " esta com " << TotalDeVotosCadaCandidato[i] << " votos " << endl;      
               
-        flag = 2;
-
-        
+        cout << "Obrigado por votar!" << endl << "--------------------" << endl;
+        cout << "Comecar a votar? <S/N>";
+        cin >> VerificacaoParaVoto;
 
     }
     
