@@ -9,19 +9,24 @@ using namespace std;
 int main()
 {  
     string Candidatos[] = {"Nulo", "Bolsonaro", "Lula", "Ciro", "Padre Kelmo", "Simone Tebet", "Pablo Marcal"};
+    string CandidatoVencedor;
+    int TotalDeVotosCandidatoVencedor = 0;
     int TotalDeVotosCadaCandidato[7] = {0};
-    int CodigoCandidato;
+    uint16_t CodigoCandidato;
     char ConclusaoDeVoto = 'N';
     char VerificacaoParaVoto = 'S';
 
     while (VerificacaoParaVoto == 'S')
     {
+        if(ConclusaoDeVoto == 'S')
+            ConclusaoDeVoto = 'N';
+        
+
         cout << "Candidatos disponiveis para voto com seus respectivos codigos: " << endl;
 
         for(int i = 0; i < 7; i++)
-        {
            cout <<  i << " - " << Candidatos[i] << endl;
-        }
+        
         
         while(ConclusaoDeVoto == 'N')
         {
@@ -43,5 +48,8 @@ int main()
         cin >> VerificacaoParaVoto;
 
     }
+
     
+        
+
 }
