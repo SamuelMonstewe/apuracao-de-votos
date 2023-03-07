@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cstdio>
-#include <windows.h>
 #include <locale>
 #include <string>
 #include <cctype>
@@ -13,8 +12,6 @@ int main()
 {
     string Candidatos[] = {"[Nulo]", "[Bolsonaro]", "[Lula]", "[Ciro]", "[Padre Kelmo]", "[Simone Tebet]", "[Pablo Marcal]"};
     string CandidatoVencedor;
-    string Nome;
-    string Cpf;
     unsigned int TotalDeVotosCandidatoVencedor = 0;
     unsigned int TotalDeVotosCadaCandidato[7] = {0};
     uint16_t CodigoDeVotoDoCandidato;
@@ -23,8 +20,7 @@ int main()
     char VerificacaoParaVoto = 'S';
 
     while (VerificacaoParaVoto == 'S')
-    {    cout << "Digite seu nome e cpf respectivamente: ";
-
+    {    
         if(ConclusaoDeVoto == 'S')
             ConclusaoDeVoto = 'N';
         
