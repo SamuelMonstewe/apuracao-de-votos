@@ -4,6 +4,7 @@
 #include <windows.h>
 #include <locale>
 #include <string>
+#include <cctype>
 using namespace std;
 
 int main()
@@ -35,6 +36,7 @@ int main()
             {
                 cout << "VOCE TEM CERTEZA? <S/N>";
                 cin >> ConclusaoDeVoto;
+                ConclusaoDeVoto = toupper(ConclusaoDeVoto);
                 if(ConclusaoDeVoto == 'S')
                     TotalDeVotosCadaCandidato[CodigoDeVotoDoCandidato]++;
             }
@@ -43,6 +45,8 @@ int main()
                 cout << "Candidato selecionado: " << Candidatos[CodigoDeVotoDoCandidato] << endl;
                 cout << "Concluir voto? <S/N>";
                 cin >> ConclusaoDeVoto;
+                ConclusaoDeVoto = toupper(ConclusaoDeVoto);
+               if(ConclusaoDeVoto == 'S') 
                 TotalDeVotosCadaCandidato[CodigoDeVotoDoCandidato]++;
             }
             
@@ -56,7 +60,7 @@ int main()
         cout << "Obrigado por votar!" << endl << "--------------------" << endl;
         cout << "Comecar a votar? <S/N>";
         cin >> VerificacaoParaVoto;
-
+        VerificacaoParaVoto = toupper(VerificacaoParaVoto);
         TotalDeEleitores++;
     }
 
@@ -70,6 +74,7 @@ int main()
             TotalDeVotosCandidatoVencedor = TotalDeVotosCadaCandidato[i];
             CandidatoVencedor = Candidatos[i];
         }
+
     }
    
     if(CandidatoVencedor == "[Nulo]")
@@ -79,7 +84,7 @@ int main()
     
     cout << "O total de eleitores participantes foi de: " << TotalDeEleitores << endl;
 
-    system("pause");
+      system("pause");
 }
 
 
